@@ -18,19 +18,18 @@ This repository focuses on automated deployment of cloud infrastructure with an 
 
 ```
 .
-└── test-elb/                    # ELB & ECS provisioning root
-    ├── ecs.yml                  # Infrastructure deployment playbook
-    ├── group_vars/              # Centralized variable definitions
-    │   └── all/
-    │       ├── application.yml
-    │       └── aws/             # Service-specific configuration files (ec2, ecs, elb, vpc, tags, region)
-    ├── roles/                   # Infrastructure automation roles
-    │   ├── aws-elb/             # Provisions Classic Load Balancer with custom health checks and schemes
-    │   ├── aws-vpc/             # Network provisioning (VPC, CIDRs, Subnets)
-    │   ├── aws-security-groups/ # Security Group rules for Load Balancers & EC2
-    │   └── aws-ecs-autoscale/   # ECS Cluster & Auto Scaling Launch Configuration
-    ├── aws-env.json             # Environment profile configuration
-    └── dependency.py            # Boto library dependency helper
+├── ecs.yml                  # Infrastructure deployment playbook
+├── group_vars/              # Centralized variable definitions
+│   └── all/
+│       ├── application.yml
+│       └── aws/             # Service-specific configuration files (ec2, ecs, elb, vpc, tags, region)
+├── roles/                   # Infrastructure automation roles
+│   ├── aws-elb/             # Provisions Classic Load Balancer with custom health checks and schemes
+│   ├── aws-vpc/             # Network provisioning (VPC, CIDRs, Subnets)
+│   ├── aws-security-groups/ # Security Group rules for Load Balancers & EC2
+│   └── aws-ecs-autoscale/   # ECS Cluster & Auto Scaling Launch Configuration
+├── aws-env.json             # Environment profile configuration
+└── dependency.py            # Boto library dependency helper
 ```
 
 ---
@@ -59,10 +58,9 @@ This repository focuses on automated deployment of cloud infrastructure with an 
 
 ### Execution
 
-Run the deployment playbook from the project directory:
+Run the deployment playbook directly from the repository root:
 
 ```bash
-cd test-elb
 ansible-playbook ecs.yml
 ```
 
